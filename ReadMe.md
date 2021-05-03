@@ -67,6 +67,7 @@ python simulator.py
 ```
 
 ## Simulator Configuration
+
 Below is the content of the ```conigure.ini```, the settings in this file will affect the behaviors of the simulator.
 ```sh
 [SETTING]
@@ -91,6 +92,7 @@ START_FRAME=0
 END_FRAME=10
 ```
 **[SETTING]**
+
 The values of ```AUTO_GENERATE_OCCUPANTS``` could be ```True``` or ```False```.
 - When ```AUTO_GENERATE_OCCUPANTS``` = ```True```, the simulator will take ```melbourne_temperature.csv``` as input and generate random occumancy number between 1 and ```MAX_OCCUPANCY``` for each 10 minutes time interval.
 - When ```AUTO_GENERATE_OCCUPANTS``` = ```False```, the simulator will take ```melbourue_temperature_occupancy.csv``` as input, and use the predefined occupancy count for each 10 minutes interval.
@@ -100,15 +102,19 @@ The values of ```ADJUST_TEXT``` could be ```True``` or ```False```.
 - When ```ADJUST_TEXT``` = ```False```,the simulator ignore the annotation overlap for temperature and occupancy chart.
 
 **[CHART]**
+
 The value of ```MAIN_TITLE```,```ROOM_TITLE```,```CHART2_TITLE```,```CHART3_TITLE``` could be any text value. It will affect the heading text of the charts in the visualisation.
 
 **[CHARTSETTING]**
+
 The ```LEFT```,```BOTTOM```, ```RIGHT```,```TOP``` and ```HSPACE```(the amount of height reserved for space between subplots) of the charts. 
 
 **[PARAMETERS]**
+
 The value of ```MAX_OCCUPANCY``` should be an interger large than 1. It will affect the max number of random occupancy count for each time interval.
 
 **[CHARTEXPORT]**
+
 The value of ```EXPORT``` could be ```True``` or ```False```.
 - When ```EXPORT``` = ```True```, the script will generate the imagess for frame number between ```START_FRAME``` and ```END_FRAME```. For example, if the START_FRAME=0 and END_FRAME=10, the script will generate 11 images from frame 0 to frame 10. **Each time interval is considered as a frame**.
 - When ```EXPORT``` = ```False```, the script won't generate images and will only start the visualisation.
@@ -120,12 +126,14 @@ The value of ```START_FRAME``` and ```END_FRAME``` are integer.
 - Each frame image takes around 1 seconds to generate
 
 ## Developer Notes
+
 This simulation program contains three main parts: 
-- Matrix calculation for stage 1,2 & 3. Anything related to matrix please update the code in ```matrix_generator.py```
+- Matrix calculation for stage 1,2 & 3 - Anything related to matrix please update the code in ```matrix_generator.py```
 - Create Graphs - Currently the simulation include three graphs, for any future update about adding graphs/elements please check the code before ```plot_simulation``` function in ```simulator.py```
 - Update the Graphs(Animation) - The graphs are update based on the data in matrix, if you want to change how the graph is anamated plesae check the ```plot_simulation``` function in ```simulator.py```
 
 **Additional links**
+
 Subplot
 - https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html
 - https://matplotlib.org/stable/gallery/subplots_axes_and_figures/axes_margins.html#sphx-glr-gallery-subplots-axes-and-figures-axes-margins-py
