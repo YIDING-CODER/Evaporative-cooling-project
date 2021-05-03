@@ -270,9 +270,6 @@ def plot_simulation(frame):
             occupancy_chart.set_ylim(0,12)
 
 
-
-    return scat,tem_line,occ_line
-
 # Alter the margin and padding of charts
 # The graph may display differently on different screens
 # The value set left=0.085, bottom=0.2, right=0.82,top=0.915,hspace=0.68 is pefect for exporting the image using savefig
