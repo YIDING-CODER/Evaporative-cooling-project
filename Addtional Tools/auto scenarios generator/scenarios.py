@@ -5,8 +5,6 @@ NUM_SIMULATION=100
 T0_LOW=10
 T0_HIGH=15
 
-
-# Do not need to update the code below------------------
 import random
 # @t0 initial temperature
 def scenario_template(row,t0):
@@ -36,6 +34,7 @@ def scenario_template(row,t0):
 
     return M
 
+# Do not need to update the code below------------------
 def get_random_number(low,high):
     return round(random.uniform(low,high),2)
 
